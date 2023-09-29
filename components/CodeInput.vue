@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const code = defineModel<string>({ required: true });
+const setFocus = defineModel<boolean>("setFocus", { required: true });
 
 // for every character inputted, replace placeholder with space
 // input: "12  " placeholder: "  00"
@@ -10,15 +11,23 @@ const placeholder = computed(() => {
 
 const inputFilter = useInputFilter(code);
 const pasteFilter = usePasteFilter(code);
+
+const inputRef = ref<{ $refs: { input: HTMLInputElement } } | null>();
+watch(setFocus, (value) => {
+  if (value) {
+    inputRef.value?.$refs.input.focus();
+  }
+});
 </script>
 
 <template>
   <p
-    class="pt-2.5 lg:pt-3 xl:pt-3.5 relative not-sr-only font-mono font-bold text-7xl lg:text-8xl xl:text-9xl text-zinc-500/25 dark:text-zinc-700/50 tracking-wider whitespace-pre"
+    class="pt-2.5 lg:pt-3 xl:pt-3.5 relative not-sr-only font-mono font-bold text-7xl lg:text-8xl xl:text-9xl text-zinc-500/25 dark:text-zinc-800 tracking-wider whitespace-pre"
   >
     {{ placeholder
     }}<UInput
       v-model="code"
+      ref="inputRef"
       class="absolute inset-0 text-zinc-900 dark:text-white"
       :ui="{
         size: {
@@ -32,6 +41,7 @@ const pasteFilter = usePasteFilter(code);
       type="number"
       max="9999"
       min="0"
+      :autofocus="setFocus"
       @keydown="inputFilter"
       @paste.prevent="pasteFilter"
     />

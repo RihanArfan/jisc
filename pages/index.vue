@@ -9,6 +9,9 @@ async function submit() {
   // Do something with data
 }
 
+const setFocus = refAutoReset(true, 1);
+onKeyStroke((e) => (setFocus.value = false));
+
 const attendance = ref<Attendance[]>([]);
 </script>
 
@@ -43,6 +46,7 @@ const attendance = ref<Attendance[]>([]);
 
     <main
       class="order-1 sm:order-2 flex grow items-center justify-center relative h-screen"
+      @click="setFocus = false"
     >
       <NavBar />
 
