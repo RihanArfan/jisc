@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="absolute left-0 bottom-0 p-2 md:px-4 transition-all flex justify-center gap-3 opacity-25"
+    class="absolute right-0 bottom-0 p-2 md:px-4 transition-all flex justify-center gap-3 opacity-25"
   >
     <a href="https://about.datax.jisc.ac.uk/studygoal/termsandconditions">
       Terms of Service
