@@ -1,5 +1,20 @@
+<script setup lang="ts">
+useHead({
+  titleTemplate: (title) => (title ? `${title} | JISC` : "JISC"),
+  link: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon.png",
+    },
+  ],
+});
+</script>
+
 <template>
   <div>
-    <NuxtWelcome />
+    <NuxtLoadingIndicator />
+    <NuxtPage />
+    <UNotifications />
   </div>
 </template>
