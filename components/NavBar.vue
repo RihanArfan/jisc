@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="absolute inset-x-0 top-0 flex justify-between p-2 md:px-4 transition-all"
+    class="absolute inset-x-0 top-0 flex justify-between p-2 md:px-4 [@media(display-mode:standalone)]:pt-1 transition-all"
   >
     <h1 class="font-bold text-xl flex gap-3 align-center items-center">
       <img src="/favicon.png" alt="JISC Logo" class="inline h-8 w-8" />

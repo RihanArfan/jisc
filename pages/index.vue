@@ -3,6 +3,8 @@ import { Attendance } from "~/types";
 
 useHead({ title: "Attendance" });
 
+const { $pwa } = useNuxtApp();
+
 const code = ref("");
 
 async function submit() {
@@ -16,12 +18,14 @@ const attendance = ref<Attendance[]>([]);
 </script>
 
 <template>
-  <div class="flex sm:h-screen flex-col sm:flex-row">
+  <div
+    class="flex sm:h-screen flex-col sm:flex-row text-zinc-800 dark:text-white"
+  >
     <aside
       id="sidebar"
-      class="order-2 sm:order-1 md:w-96 sm:w-1/2 border border-zinc-200 dark:border-zinc-700 rounded-lg m-1.5 p-2 sm:p-3 md:px-3 transition-all overflow-y-scroll flex flex-col gap-2"
+      class="order-2 sm:order-1 md:w-96 sm:w-1/2 border border-zinc-200 dark:border-zinc-700 rounded-lg m-1.5 [@media(display-mode:standalone)]:mt-0 p-2 sm:p-3 md:px-3 transition-all overflow-y-scroll flex flex-col gap-2"
     >
-      <h2 class="font-bold text-xl mb-2">Recent Sessions</h2>
+      <h2 class="font-bold text-xl mb-2">Recent Attendance</h2>
 
       <div
         v-if="attendance.length"
@@ -54,7 +58,10 @@ const attendance = ref<Attendance[]>([]);
         <CodeInput v-model="code" ref="input" v-model:set-focus="setFocus" />
       </form>
 
-      <Footer />
+      <Footer
+        class="[@media(display-mode:standalone)]:hidden"
+        :class="{ hidden: !$pwa?.needRefresh }"
+      />
     </main>
   </div>
 </template>
