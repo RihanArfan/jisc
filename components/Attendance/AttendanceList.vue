@@ -7,9 +7,9 @@ const attendance = ref<Attendance[]>([]);
 <template>
   <aside
     id="sidebar"
-    class="order-2 sm:order-1 md:w-96 sm:w-1/2 border border-zinc-200 dark:border-zinc-700 rounded-lg m-1.5 [@media(display-mode:standalone)]:mt-0 p-2 sm:p-3 md:px-3 transition-all overflow-y-scroll flex flex-col gap-2 [&::-webkit-scrollbar]:w-[7px] [&::-webkit-scrollbar-thumb]:bg-zinc-200 [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:hover:bg-zinc-300/90 dark:[&::-webkit-scrollbar-thumb]:bg-zinc-800 dark:[&::-webkit-scrollbar-thumb]:rounded-lg dark:[&::-webkit-scrollbar-thumb]:hover:bg-zinc-700"
+    class="h-screen sm:h-full md:w-96 sm:w-1/2 border border-zinc-200 dark:border-zinc-700 rounded-lg m-1.5 [@media(display-mode:standalone)]:mt-0 p-2 sm:p-3 md:px-3 transition-all overflow-y-scroll flex flex-col gap-2 [&::-webkit-scrollbar]:w-[7px] [&::-webkit-scrollbar-thumb]:bg-zinc-200 [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:hover:bg-zinc-300/90 dark:[&::-webkit-scrollbar-thumb]:bg-zinc-800 dark:[&::-webkit-scrollbar-thumb]:rounded-lg dark:[&::-webkit-scrollbar-thumb]:hover:bg-zinc-700"
   >
-    <h2 class="font-semibold text-lg mb-1">Recent Attendance</h2>
+    <h2 class="font-semibold text-xl sm:text-lg mb-1">Recent Attendance</h2>
 
     <div
       v-if="attendance.length"
