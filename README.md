@@ -1,22 +1,23 @@
-# Nuxt 3 Minimal Starter
+# JISC Attendance
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Modern recreation of [JISC Study Goal](https://studygoal.jisc.ac.uk/), an attendance tool used by many universities in UK.
+
+Created out of boredom in a lecture, as a flex, and because the original app has a dated Material UI look.
+
+## Stack
+
+- [Nuxt 3 (+ Vue.js)](https://nuxt.com/)
+- [Nuxt UI](https://ui.nuxtlabs.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [VueUse](https://vueuse.org/)
+- [Vite PWA](https://vite-pwa-org.netlify.app/)
+- [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
 bun install
 ```
 
@@ -25,16 +26,6 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
 bun run dev
 ```
 
@@ -43,33 +34,21 @@ bun run dev
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
 bun run build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
 bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Build PWA Assets
+
+Upload icon to `public/icon.png` then run:
+
+```bash
+bun run generate-pwa-assets
+```
